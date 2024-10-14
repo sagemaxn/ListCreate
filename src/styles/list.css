@@ -1,0 +1,16 @@
+.item-list {
+  list-style-type: none;
+  padding: 0;
+  /* max height 100% of parent container */
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.list-item {
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.list-item-name:hover {
+  color: #ff00b3;
+}

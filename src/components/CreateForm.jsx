@@ -1,32 +1,36 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
-import Input from "./Input";
-import handleSubmit from "../utils/handleSubmit";
-
-const CreateForm = () => {
-  const [name, setName] = useState("");
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
-
-  const onSubmit = (e) => handleSubmit(e, name, setError, navigate);
-
+const CreateForm = ({ name, error, onSubmit, onChange }) => {
   return (
-    <div className="create-container">
-      <form onSubmit={onSubmit} className="create-form">
-        <Input
-          name={name}
-          setName={setName}
-          error={error}
-          setError={setError}
+    <form onSubmit={onSubmit} className="create-form">
+      <div className="input-group">
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          value={name}
+          onChange={onChange}
+          className="name-input"
         />
-        <h2 className="name-preview">{name}</h2>
-        <button type="submit" className="add-button">
-          Add New Entry
-        </button>
-      </form>
-    </div>
+        {error && <p className="error-message">{error}</p>}
+      </div>
+      <h2 className="name-preview">{name}</h2>
+      <button type="submit" className="add-button">
+        Add New Entry
+      </button>
+    </form>
   );
+};
+
+CreateForm.propTypes = {
+  name: PropTypes.string.isRequired,
+  error: PropTypes.string,
+  onSubmit: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
+
+CreateForm.defaultProps = {
+  error: "",
 };
 
 export default CreateForm;

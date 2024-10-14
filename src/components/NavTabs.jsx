@@ -1,12 +1,9 @@
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const NavTabs = () => {
   return (
-    <nav>
-      <ul
-        className="tab-bar"
-        style={{ display: "flex", justifyContent: "space-around" }}
-      >
+    <nav aria-label="navigation">
+      <ul className="tab-bar">
         <li>
           <NavLink
             to="/main/list"
@@ -28,4 +25,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavTabs;
