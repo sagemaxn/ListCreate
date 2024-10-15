@@ -1,7 +1,6 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import NavTabs from "../components/NavTabs";
-import List from "./pages/main/List";
-import Create from "./pages/main/Create";
+import Main from "../components/Main";
 import Error from "./pages/Error";
 
 const App = () => {
@@ -9,10 +8,14 @@ const App = () => {
     <div className="container">
       <NavTabs />
       <Routes>
-        <Route path="/" element={<Navigate to="/main/list" replace />} />
-        <Route path="/main" element={<Navigate to="/main/list" replace />} />
-        <Route path="/main/list" element={<List />} />
-        <Route path="/main/create" element={<Create />} />
+        {/* redirect root to /list */}
+        <Route path="/" element={<Navigate to="/list" replace />} />
+
+        {/* valid paths handled by Main */}
+        <Route path="/list" element={<Main view="list" />} />
+        <Route path="/create" element={<Main view="create" />} />
+
+        {/* catch all invalid paths */}
         <Route path="*" element={<Error />} />
       </Routes>
     </div>

@@ -12,6 +12,7 @@ const CreateForm = ({ name, error, onSubmit, onChange }) => {
           onChange={onChange}
           className="name-input"
         />
+        {/* display error message if there is one */}
         {error && <p className="error-message">{error}</p>}
       </div>
       <h2 className="name-preview">{name}</h2>

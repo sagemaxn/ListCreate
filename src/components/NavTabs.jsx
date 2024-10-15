@@ -2,11 +2,11 @@ import { NavLink } from "react-router-dom";
 
 const NavTabs = () => {
   return (
-    <nav aria-label="navigation">
+    <nav aria-label="navigation" className="nav-tabs">
       <ul className="tab-bar">
         <li>
           <NavLink
-            to="/main/list"
+            to="/list"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
             List
@@ -14,7 +14,7 @@ const NavTabs = () => {
         </li>
         <li>
           <NavLink
-            to="/main/create"
+            to="/create"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
             Create

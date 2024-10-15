@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import CreateForm from "../../../components/CreateForm";
-import handleSubmit from "../../../utils/handleSubmit";
-import handleInput from "../../../utils/handleInput";
+import CreateForm from "../../components/CreateForm";
+import handleSubmit from "../../utils/handleSubmit";
+import handleInput from "../../utils/handleInput";
 
 const Create = () => {
   const [name, setName] = useState("");

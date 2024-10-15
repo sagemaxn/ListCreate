@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import initialItems from "../../../initialItems";
-import ListItems from "../../../components/ListItems";
+import initialItems from "../../initialItems";
+import ListItems from "../../components/ListItems";
 
 const List = () => {
   const [items, setItems] = useState([]);
